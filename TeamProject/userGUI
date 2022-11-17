@@ -1,0 +1,77 @@
+import java.awt.EventQueue;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.*;
+import javax.swing.SwingConstants;
+public class userGUI extends JFrame{
+
+	private JFrame frame;
+	private JPanel panel; 
+	private ImageIcon background;
+	private JLabel backgroundLabel; 
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					userGUI window = new userGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public userGUI() {
+		initialize();
+	}
+
+
+	
+	private void initialize() {
+	// init frame 	
+		frame = new JFrame("BlackJackGame");
+		frame.setBounds(100, 100, 1100, 640);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+	// load the background image and add it to the frame	
+		backgroundLabel = new JLabel(new ImageIcon("C:\\Users\\Cole\\Pictures\\gameBackground.png"));
+		backgroundLabel.setLocation(0, 0);
+		backgroundLabel.setSize(1110, 601); 
+		frame.getContentPane().add(backgroundLabel);
+
+
+		
+		lblNewLabel_1 = new JLabel("Blackjack: Java Edition");
+		lblNewLabel_1.setForeground(new Color(128, 0, 0));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Tw Cen MT Condensed", Font.BOLD | Font.ITALIC, 33));
+		lblNewLabel_1.setBounds(300, 50, 500, 50);
+		backgroundLabel.add(lblNewLabel_1);
+		lblNewLabel_2 = new JLabel("Black Jack");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(514, 146, 46, 14);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+
+	}
+}
